@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sybrid Clock</title>
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #000;
+      }
+      .container {
+        height: 30%;
+        width: 18%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        margin: auto;
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        background-color: #fff;
+      }
+      .child {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+     <img src="download (1).png" alt="Sybrid" width="50%">
+
+      <h1 class="child" id="firstHeading"></h1>
+      <h1 class="child" id="secondHeading"></h1>
+    </div>
+  </body>
+  <script>
+    let heading1 = document.getElementById("firstHeading");
+    let heading2 = document.getElementById("secondHeading");
+    function myClock() {
+      let time = new Date();
+      heading1.innerHTML = time.toLocaleTimeString();
+      heading2.innerHTML = time.toLocaleDateString();
+    }
+    setInterval(myClock, 1000);
+  </script>
+</html>
